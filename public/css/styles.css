@@ -1,0 +1,55 @@
+.page {
+  margin: 60px auto 0;
+  text-align: center;
+  width: 60%;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  font-family:'Courier New', Courier, monospace;
+}
+
+.subtitle {
+  font-size: 20px;
+}
+
+.greet {
+  font-style: italic;
+}
+
+input {
+  padding: 5px;
+  margin:10px;
+  border-radius:3px;
+  border:1px solid black;
+}
+
+button {
+  padding:5px;
+  border:1px solid black;
+}
+
+#operator {
+  padding:5px;
+  border:1px solid black;
+  border-radius:3px;
+  background-color:rgba(128, 128, 128, 0.295);
+  font-family:'Courier New', Courier, monospace;
+}
+
+#answer {
+  border:1px solid black;
+  border-bottom:3px solid black;
+  background-color:rgba(235, 222, 222, 0.521);
+}
+
+.num {
+  width:50px;
+}
+
+.message {
+  color:red;
+  font-style: italic;
+}
