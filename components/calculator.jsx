@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 export default () => {
   const [num1, setNum1] = useState('')
   const [num2, setNum2] = useState('')
-  const [oper, setOper] = useState('')
+  const [oper, setOper] = useState('+')
   const [calc, setCalc] = useState('')
   const [message, setMessage] = useState('')
 
@@ -13,24 +13,25 @@ export default () => {
 
   const updateCalc = (event) => {
     if (Number(num1) && Number(num2)) {
+      if (message) setMessage('')
       switch (oper) {
-        case 'add':
-          setCalc(Number(num1) + Number(num2))
-          break;
         case 'subtract':
           setCalc(Number(num1) - Number(num2))
-          break;
+          break
         case 'multiply':
           setCalc(Number(num1) * Number(num2))
-          break;
+          break
         case 'divide':
           setCalc(Number(num1) / Number(num2))
-          break;
+          break
         default:
-          setCalc('')
+          setCalc(Number(num1) + Number(num2))
+        //   break
+        // default:
+        //   setCalc('')
     }
   } else {
-    setMessage('Please provide proper numbers. Thanks.')
+    setMessage('Please provide valid numbers.')
     setCalc('')
   }
   }
@@ -47,10 +48,8 @@ export default () => {
       </select>
       <input type="text" className="num" onChange={updateNum2} />
       <button onClick={updateCalc}>=</button>
-      <input type="text" className="num" value={calc} />
-      <div className="message">
-        {message ? `${message}` : null}
-      </div>
+      <input type="text" className="num" id="answer" value={calc} />
+      <div className="message">{ message ? `${message}` : null }</div>
     </div>
   )
 }
